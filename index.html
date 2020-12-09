@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Wiktor, Georgiana and David">
+    <title>Golf app</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/svg" href="/img/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="./media/logo.png">
+
+    </header>
+    <menu>
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="dropdown_menu">
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>Home</h2>
+                </a></li>
+
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>Add buckets</h2>
+                </a>
+            </li>
+
+            <li class="menu_item">
+                <a href="" class="nav_link">
+                    <h2>Upcoming events</h2>
+                </a>
+            </li>
+
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>My buckets history</h2>
+                </a>
+            </li>
+
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>Map</h2>
+                </a>
+            </li>
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>Contact</h2>
+                </a>
+            </li>
+            <li class="menu_item"><a href="" class="nav_link">
+                    <h2>Log out</h2>
+                </a>
+            </li>
+        </ul>
+    </menu>
+    <section class="function_buttons">
+        <button class="function_button collapsible">
+            <h1 class="function_name">Add buckets</h1>
+            <img class="icon" src="./media/bucket.png">
+        </button>
+        <div class="content">
+            <div id="time"></div>
+            <h1 class="counter-display">(..)</h1>
+            <h5 class="buckets_used">buckets used</h5>
+            <img src="./media/bucket-icon.png" class="bucket-icon">
+            <button class="counter-plus">ADD BUCKET</button>
+            <button class="counter-minus">DELETE BUCKET</button>
+        </div>
+        <button class="function_button collapsible">
+            <h1 class="function_name">Upcoming events</h1>
+            <img class="icon_small" src="./media/callendar.png">
+        </button>
+        <div class="content">
+            <section id="calendarContainer">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%236cc073&amp;ctz=Europe%2FBudapest&amp;src=d3JpdGVhbmVtYWlsdG9kYXZpZEBnbWFpbC5jb20&amp;src=NWhwbnF2bjNoMnZiY3JobGxyN29jdGRvMnVkcWZrbW5AaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%237CB342&amp;showTitle=0&amp;title=Events&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=0&amp;showTz=0&amp;hl=en_GB&amp;showNav=0&amp;showDate=1"
+                    style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+            </section>
+        </div>
+        <button class="function_button collapsible">
+            <h1 class="function_name">My buckets history</h1>
+            <img class="icon" src="./media/chart.png">
+        </button>
+        <div class="content1">
+            <section id="charts">
+                <section id="wkl">
+                <canvas id="chartContainer"></canvas>
+                </section>
+                <section id="mnt">
+                <canvas id="chart"></canvas>
+                </section>
+                <section id="yrl">
+                <canvas id="chrt"></canvas>
+                </section>
+                <div class="but">
+                    <a href="#wkl"><button onclick="appendChart()" class="btn">Weekly</button></a>
+                   <a href="#mnt"> <button onclick="appendChar()" class="btn">Monthly</button></a>
+                   <a href="#yrl"><button onclick="appendCha()" class="btn">Yearly</button></a>
+                </div>
+            </section>
+        </div>
+        <button class="function_button collapsible">
+            <h1 class="function_name">Map</h1>
+            <img class="icon_small icon_margin_left" src="./media/map.png">
+        </button>
+        <div class="content">
+            <div id="time"></div>
+            <h1 class="counter-display">(..)</h1>
+            <h5 class="buckets_used">buckets used</h5>
+            <img src="./media/bucket-icon.png" class="bucket-icon">
+            <button class="counter-plus">ADD BUCKET</button>
+            <button class="counter-minus">DELETE BUCKET</button>
+        </div>
+    </section>
+    <main>
+        <section id="signUpContainer">
+            <img src="/img/Logo.png" class="auth-logo">
+
+            <form>
+                <input autocomplete="email" id="signUpEmail" type="email" placeholder="Email">
+                <input autocomplete="current-password" id="signUpPassw" type="password" placeholder="Password">
+                <!-- <input id="signUpPassword2" type="password" placeholder="Password"> -->
+                <button onclick="signUp()">sign up</button>
+            </form>
+        </section>
+
+        <section id="signUpContainer">
+            <img src="/img/Logo.png" class="auth-logo">
+
+            <form>
+                <input autocomplete="email" id="signUpEmail" type="email" placeholder="Email">
+                <input autocomplete="current-password" id="signUpPassw" type="password" placeholder="Password">
+                <!-- <input id="signUpPassword2" type="password" placeholder="Password"> -->
+                <button onclick="signIn()">sign in</button>
+                <p>not registered? sign up <u>here</u></p>
+            </form>
+        </section>
+
+    </main>
+
+    <contact>
+        <h1>Get in touch!</h1>
+        <li class="contact_item"><a href="https://goo.gl/maps/mhuqvzkgrjT1NQidA" target="_blank" class="nav_link">
+                <img class="icon margin-top" src="./media/location.png">
+                <h2>Łagiewnicka 233, Łódź</h2>
+            </a></li>
+
+        <li class="contact_item"><a href="tel:+48660749471" target="_blank" class="nav_link">
+                <img class="icon margin-top" src="./media/smartphone.png">
+                <h2>+48 660 749 471</h2>
+            </a>
+        </li>
+
+        <li class="contact_item">
+            <a href="mailto:golfowy@golfowy.pl" class="nav_link" target="_blank">
+                <img class="icon margin-top" src="./media/email.png">
+                <h2>golfowy@golfowy.pl</h2>
+            </a>
+        </li>
+
+        <li class="contact_item"><a href="http://www.golfowy.pl/" target="_blank" class="nav_link">
+                <img class="icon margin-top" src="./media/internet.png">
+                <h2>golfowy.pl</h2>
+            </a>
+        </li>
+
+        <li class="contact_item"><a href="https://www.facebook.com/golfowy" target="_blank" class="nav_link">
+                <img class="icon margin-top" src="./media/facebook.png">
+                <h2>facebook.com/golfowy</h2>
+            </a>
+        </li>
+    </contact>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+</body>
+
+</html>
